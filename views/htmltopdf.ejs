@@ -1,0 +1,60 @@
+
+	<body>
+		<header id="header">
+			<nav>
+				<div class="container">
+					<div class="text-center">
+						<a href="/" class="nav-brand text-dark">All Data</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- Main Site -->
+		<main id="site-main">
+			<div class="container">
+				<form action="/" method="POST">
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th> ID </th>
+								<th>NAME</th>
+								<th>DESIGNATION</th>
+								<th>ORGANIZATION</th>
+								<th>CARD TYPE</th>
+								<th>VENUES</th>
+								<th>ZONE ONE</th>
+								<th>ZONE TWO</th>
+								<th>ZONE THREE</th>
+								<th>ZONE FOUR</th>
+								<th>ZONE FIVE</th>
+								<th>ZONE SIX</th>
+								<th>PICTURE</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% users.forEach(function(users) { %>
+							<tr >
+								<td> <%= users.id %> </td>
+								<td><%= users.fullname %></td>
+								<td><%= users.designation %></td>
+								<td><%= users.organization %></td>
+								<td><%= users.cardname %></td>
+								<td><%= users.vanue %></td>
+								<td><%= users.zoneone %></td>
+								<td><%= users.zonetwo %></td>
+								<td><%= users.zonethree %></td>
+								<td><%= users.zonefour %></td>
+								<td><%= users.zonefive %></td>
+								<td><%= users.zonesix %></td> 
+								<td>
+									<img src="http://www.accreditationzone.net/uploads/acroAvatars/<%= users.image %>"width="90px" height="90px"/> 
+								</td>
+							</tr>
+							<% }) %>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>

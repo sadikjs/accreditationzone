@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accro</title>
+	<link rel="stylesheet" href="./stylesheets/adduser.css" />
+	<link rel="stylesheet" href="./stylesheets/dropdownmenu.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+		crossorigin="anonymous" />
+</head>
+
+<body>
+	<!-- Header -->
+	<div class="navbar">
+		<a href="/"><i class="fas fa-home"></i>Home</a>
+		<div class="dropdown">
+			<button class="dropbtn">ALL DEPARTMENT
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/acro">Add New User</a>
+				<a href="/add-user">All Data</a>
+				<a href="/print/1">Print</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">MARKETING & COMMERCIAL
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/marketing">Add New User</a>
+				<a href="marketing-data">All Data</a>
+				<a href="/marketing-print/1">Print</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">BCB & OFFICE
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/bcb">Add New User</a>
+				<a href="/bcb-data">All Data</a>
+				<a href="/bcb-print/1">Print</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Law & Force
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/law">Add New User</a>
+				<a href="/law-data">All Data</a>
+				<a href="/law-print/1">Print</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">PMOA
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/pmoa">Add New User</a>
+				<a href="/pmoa-data">All Data</a>
+				<a href="/pmoa-print/1">Print</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">MEDIA
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="/media">Add New User</a>
+				<a href="/add-media">All Data</a>
+				<a href="/media-print/1">Media Print</a>
+			</div>
+		</div>
+	</div>
+	<header id="header">
+		<nav>
+			<div class="container">
+				<div class="text-center">
+					<a href="/" class="nav-brand text-dark">All Data</a>
+					<a href="/htmltopdfbcb" style="cursor:pointer; color:darkslateblue">Data-Export</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Main Site -->
+	<main id="site-main">
+		<div class="container">
+			<form action="/" method="POST">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th>FORM NO</th>
+							<th>NAME</th>
+							<th>DESIGNATION</th>
+							<th>ORGANIZATION</th>
+							<th>VENUES</th>
+							<th>ZONE ONE</th>
+							<th>ZONE TWO</th>
+							<th>ZONE THREE</th>
+							<th>ZONE FOUR</th>
+							<th>ZONE FIVE</th>
+							<th>ZONE SIX</th>
+							<th>NID NO</th>
+							<th>PICTURE</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% users.forEach(function(user) { %>
+							<tr id="<%= user._id %>">
+								<td>
+									<%= user.formno %>
+								</td>
+								<td>
+									<%= user.fullname %>
+								</td>
+								<td>
+									<%= user.designation %>
+								</td>
+								<td>
+									<%= user.organization %>
+								</td>
+								<td>
+									<%= user.vanue %>
+								</td>
+								<td>
+									<%= user.zoneone %>
+								</td>
+								<td>
+									<%= user.zonetwo %>
+								</td>
+								<td>
+									<%= user.zonethree %>
+								</td>
+								<td>
+									<%= user.zonefour %>
+								</td>
+								<td>
+									<%= user.zonefive %>
+								</td>
+								<td>
+									<%= user.zonesix %>
+								</td>
+								<td>
+									<%= user.nidno %>
+								</td>
+								<td>
+									<img src="../uploads/bcbAvatars/<%= user.image %>" width="40px" height="40px" />
+								</td>
+								<td>
+									<div>
+										<form class="left" action="/bcb-edit/<%=user._id %>" method="get">
+											<button type="submit" class="btn border-shadow update"><span
+													class="text-gradient"><a href="#"><i
+															class="fas fa-pencil-alt"></i></a></span>
+											</button>
+										</form>
+										<a href="/bcb-data" class="right btn border-shadow delete"><span
+												class="text-gradient"><i class="fas fa-times"
+													onclick="deleteAllUser('<%= user._id %>')"></i></span>
+										</a>
+									</div>
+
+								</td>
+							</tr>
+							<% }) %>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</main>
+	<script>
+		//Toast
+		const deleteUserToast = Toastify({
+			text: "User delete successfully",
+			duration: 1000,
+		});
+
+		const deleteErrorUser = Toastify({
+			text: "Could not delete the user!",
+			duration: 1000
+		})
+
+		//delete document
+		async function deleteAllUser(userId) {
+			let response = await fetch(`bcb-data/${userId}`, {
+				method: "DELETE"
+			});
+
+			let result = await response.json();
+			if (result.errors) {
+				deleteErrorUser.showToast();
+			} else {
+				deleteUserToast.showToast();
+				document.getElementById(userId).remove();
+			}
+		}
+	</script>
+</body>
+
+</html>

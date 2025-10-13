@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="../stylesheets/edit.css" />
+  <link rel="stylesheet" href="../stylesheets/header-dropdwon-edit.css" />
+</head>
+<body>
+      <div class="navbar">
+    <a href="/"><i class="fas fa-home"></i>Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">ORG
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/acro">Add New User</a>
+        <a href="/add-user">All Data</a>
+        <a href="/print/1">Print</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">MARKETING & COMMERCIAL 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/marketing">Add New User</a>
+        <a href="marketing-data">All Data</a>
+        <a href="/marketing-print/1">Print</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">BCB & OFFICE 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/bcb">Add New User</a>
+        <a href="/bcb-data">All Data</a>
+        <a href="/bcb-print/1">Print</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">Law & Force 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/law">Add New User</a>
+        <a href="/law-data">All Data</a>
+        <a href="/law-print/1">Print</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">PMOA
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/pmoa">Add New User</a>
+        <a href="/pmoa-data">All Data</a>
+        <a href="/pmoa-print/1">Print</a>
+      </div>
+  </div> 
+    <div class="dropdown">
+      <button class="dropbtn">MEDIA 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/media">Add New User</a>
+        <a href="/add-media">All Data</a>
+        <a href="/media-print/1">Media Print</a>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="main-block">
+      <h1>Update</h1>
+      <form method="post"
+      action="/law-update/<%=data._id %>">
+        <hr>
+        <!-- <div class="account-type">
+          <a style="padding-right:5px" href="/"><i class="fas fa-home"></i></a><a style="padding-left:5px; text-decoration:none " href="/add-user"><i class="fas fa-angle-double-left"></i> All Users</a><a style="padding-left: 4px; text-decoration:none " href="/print/1"></i>Print</a>
+        </div>
+        <hr> -->
+        <div class="colums">
+            <div class="form-left">
+              <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
+              <input type="text" name="manualnumber" id="manualnumber" placeholder="MANUAl SL" value="<%=data.manualnumber %>" required/>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
+              <input type="text" name="fullname" id="fullname" placeholder="FULL NAME" value="<%= data.fullname %>" required/>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name"><i class="fas fa-user"></i></label>
+              <input type="text" name="designation" id="designation" placeholder="DESIGNATION" value="<%= data.designation %>" />
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name"><i class="fas fa-user"></i></label>
+              <input type="text" name="organization" id="organizationname" placeholder="ORGANIZATION" value="<%=data.organization %>"/>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+              <input type="text" name="nidno" id="nidpassport" placeholder="NID/PASSPORT/BIRTH ID" value="<%= data.nidno %>" required/>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+              <input type="text" name="phone" id="nidpassport" placeholder="PHONE NUMBER" value="<%= data.phone %>" required/>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name">CARD NAME: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cardname" name="cardname">
+            <% cardname.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.cardname === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name">VENUES: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="vanue">
+              <% vanue.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.vanue === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name">ZONE ONE: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zoneone">
+              <% zoneone.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.zoneone === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name">ZONE TWO: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zonetwo>
+              <% zonetwo.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.zonetwo === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name">ZONE THREE: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zonethree">
+              <% zonethree.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.zonethree === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name">ZONE FOUR:<!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zonefour">
+              <% zonefour.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.zonefour === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-left">
+              <label id="icon" for="name">ZONE FIVE: <!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zonefive">
+              <% zonefive.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.zonefive === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+            <div class="form-right">
+              <label id="icon" for="name">ZONE SIX:<!-- <i class="fas fa-envelope"></i> --></label> 
+              <select id="cars" name="zonesix">
+              <% zonesix.forEach(card => { %>
+                <option value="<%= card.value %>" <%= (data.six === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
+            <% }) %>
+              </select>
+            </div>
+              <div class="form-left">
+                <label id="icon" for="name">Form No:</label>
+                <input type="text" name="formno" id="name" placeholder="FORM NO" value="<%=data.formno %>" required/>
+              </div>
+              <div class="form-right">
+                <label id="icon" for="cardtype"> CARD TYPE:</label>
+                <input type="text" name="cardfooter" id="cardname" placeholder="CARD TYPE" value="<%=data.cardfooter %>">
+              </div>
+        </div>
+            <hr>
+            <div class="btn-block">
+              <p>By clicking Register</p>
+              <button type="submit" value="Submit">Update</button>
+            </div>
+        </form>
+      </div>
+  </body>
+</html>

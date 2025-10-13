@@ -1,0 +1,140 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sumit Saha" />
+    <meta name="owner" content="learnwithsumit.com" />
+    <title><%= title %></title>
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./stylesheets/toastify.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/acro.css" />
+    <link rel="stylesheet" href="./stylesheets/dropdownmenu.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    
+    <script src="./js/toastify.js"></script>
+    <script>
+      const deleteToast = Toastify({
+        text: "You are being logout....",
+        duration: 1000,
+      })
+      function logout(){
+        fetch("/", {
+          method: "DELETE"
+
+        })
+        deleteToast.showToast();
+
+        setTimeout(()=>{
+          window.location.replace("/");
+        }, 1000)
+      }
+    </script>
+  </head>
+  <body>
+    <div class="menu">
+      <% if(loggedInUser && loggedInUser.username) { %>
+        <div class="navbar">
+          <div>
+            <a href="/"><i class="fas fa-home"></i>Home</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Org
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/acro">Acro New User</a>
+              <a href="/acro/list">Acro list</a>
+              <a href="/acro/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">BCB & Office
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/bcb">Add New User</a>
+              <a href="/bcb-data">All Data</a>
+              <a href="/bcb-print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Marketing & Commercial
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/marketing">Add New User</a>
+              <a href="marketing-data">All Data</a>
+              <a href="/marketing-print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Law & Force
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/law">Add New User</a>
+              <a href="/law-data">All Data</a>
+              <a href="/law-print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">PMOA
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/pmoa">Add New User</a>
+              <a href="/pmoa-data">All Data</a>
+              <a href="/pmoa-print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Media
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/media">Add New User</a>
+              <a href="/add-media">All Data</a>
+              <a href="/media-print/1">Media Print</a>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="#" onclick="logout()">Logout</a>
+          </div>
+        </div>
+      <% } else { %> 
+      <div class="menu-item"><a href="/users">Users</a></div>
+      <div class="menu-item"><a href="/">Login</a></div>
+      <% } %>
+    </div>
+    <div id="chat-container">
+      <div class="dash-title">
+          <h1> WELCOME TO ACCREDITATION ZONE</h1>
+      </div>
+      <div class="side-image">
+        <img src="./images/dashboardPic.png" width="60%"  alt="side-bar" />
+      </div>
+    </div>
+
+    <div class="modal-wrapper">
+      <div class="modal">
+        <a href="#" class="modal-close">+</a>
+        <div class="modal-title">
+          <h2>Create New Conversation</h2>
+        </div>
+        <div class="modal-body">
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Username" />
+            <input type="button" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
