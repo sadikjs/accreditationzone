@@ -2,80 +2,117 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Accro</title>
-	<link rel="stylesheet" href="./stylesheets/adduser.css" />
-	<link rel="stylesheet" href="./stylesheets/dropdownmenu.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-		integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-		crossorigin="anonymous" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Sumit Saha" />
+	<meta name="owner" content="learnwithsumit.com" />
+	<title>
+		<%= title %>
+	</title>
+	<link rel="shortcut icon" href="./images/favicon.png" />
+	<link rel="stylesheet" href="../stylesheets/toastify.css" />
+	<link rel="stylesheet" href="../stylesheets/adduser.css" />
+	<link rel="stylesheet" href="../stylesheets/acro.css" />
+	<link rel="stylesheet" href="../stylesheets/dropdownmenu.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<script src="./js/toastify.js"></script>
+	<script>
+		const deleteToast = Toastify({
+			text: "You are being logout....",
+			duration: 1000,
+		})
+		function logout() {
+			fetch("/", {
+				method: "DELETE"
+
+			})
+			deleteToast.showToast();
+
+			setTimeout(() => {
+				window.location.replace("/");
+			}, 1000)
+		}
+	</script>
 </head>
 
 <body>
-	<!-- Header -->
-	<div class="navbar">
-		<a href="/"><i class="fas fa-home"></i>Home</a>
-		<div class="dropdown">
-			<button class="dropbtn">ALL DEPARTMENT
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/acro">Add New User</a>
-				<a href="/add-user">All Data</a>
-				<a href="/print/1">Print</a>
+	<div class="menu">
+		<% if(loggedInUser && loggedInUser.username) { %>
+			<div class="navbar">
+				<div>
+					<a href="/"><i class="fas fa-home"></i>Home</a>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">All Department
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/acro">New User</a>
+						<a href="/acro/list">All Data</a>
+						<a href="/acro/print/1">Print</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">BCB & Office
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/bcb">New User</a>
+						<a href="/bcb/data">All Data</a>
+						<a href="/bcb/print/1">Print</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">Marketing & Commercial
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/marketing">New User</a>
+						<a href="/marketing/data">All Data</a>
+						<a href="/marketing/print/1">Print</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">Law & Force
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/law">New User</a>
+						<a href="/law/data">All Data</a>
+						<a href="/law/print/1">Print</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">PMOA
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/pmoa">New User</a>
+						<a href="/pmoa/data">All Data</a>
+						<a href="/pmoa/print/1">Print</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a class="dropbtn">Media
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="/media">New User</a>
+						<a href="/media/data">All Data</a>
+						<a href="/media/print/1">Media Print</a>
+					</div>
+				</div>
+				<div class="menu-item">
+					<a href="#" onclick="logout()">Logout</a>
+				</div>
 			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn">MARKETING & COMMERCIAL
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/marketing">Add New User</a>
-				<a href="marketing-data">All Data</a>
-				<a href="/marketing-print/1">Print</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn">BCB & OFFICE
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/bcb">Add New User</a>
-				<a href="/bcb-data">All Data</a>
-				<a href="/bcb-print/1">Print</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn">Law & Force
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/law">Add New User</a>
-				<a href="/law-data">All Data</a>
-				<a href="/law-print/1">Print</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn">PMOA
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/pmoa">Add New User</a>
-				<a href="/pmoa-data">All Data</a>
-				<a href="/pmoa-print/1">Print</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn">MEDIA
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="/media">Add New User</a>
-				<a href="/add-media">All Data</a>
-				<a href="/media-print/1">Media Print</a>
-			</div>
-		</div>
+			<% } else { %>
+				<div class="menu-item"><a href="/users">Users</a></div>
+				<div class="menu-item"><a href="/">Login</a></div>
+				<% } %>
 	</div>
 	<header id="header">
 		<nav>
@@ -154,15 +191,23 @@
 								</td>
 								<td>
 									<div>
-										<form class="left" action="/bcb-edit/<%=user._id %>" method="get">
-											<button type="submit" class="btn border-shadow update"><span
-													class="text-gradient"><a href="#"><i
-															class="fas fa-pencil-alt"></i></a></span>
+										<form class="left" action="/bcb/edit/<%=user._id %>" method="get">
+											<button type="submit" style="color: black;">
+												<span
+													class="text-gradient">
+													<a href="#"><i
+															class="fas fa-pencil-alt">
+														</i>
+													</a>	
+												</span>
 											</button>
 										</form>
-										<a href="/bcb-data" class="right btn border-shadow delete"><span
-												class="text-gradient"><i class="fas fa-times"
-													onclick="deleteAllUser('<%= user._id %>')"></i></span>
+										<a href="/bcb/data" class="right delete">
+											<span
+												class="text-gradient">
+												<i class="fas fa-times" style="color: black;" onclick="deleteAllUser('<%= user._id %>')">
+												</i>
+											</span>
 										</a>
 									</div>
 
@@ -188,7 +233,7 @@
 
 		//delete document
 		async function deleteAllUser(userId) {
-			let response = await fetch(`bcb-data/${userId}`, {
+			let response = await fetch(`bcb/${userId}`, {
 				method: "DELETE"
 			});
 

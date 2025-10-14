@@ -46,12 +46,12 @@
 					<a href="/"><i class="fas fa-home"></i>Home</a>
 				</div>
 				<div class="dropdown">
-					<a class="dropbtn">Org
+					<a class="dropbtn">All Department
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/acro">Acro New User</a>
-						<a href="/acro/list">Acro list</a>
+						<a href="/acro">New User</a>
+						<a href="/acro/data">All Data</a>
 						<a href="/acro/print/1">Print</a>
 					</div>
 				</div>
@@ -60,9 +60,9 @@
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/bcb">Add New User</a>
-						<a href="/bcb-data">All Data</a>
-						<a href="/bcb-print/1">Print</a>
+						<a href="/bcb">New User</a>
+						<a href="/bcb/data">All Data</a>
+						<a href="/bcb/print/1">Print</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -70,9 +70,9 @@
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/marketing">Add New User</a>
-						<a href="marketing-data">All Data</a>
-						<a href="/marketing-print/1">Print</a>
+						<a href="/marketing">New User</a>
+						<a href="/marketing/data">All Data</a>
+						<a href="/marketing/print/1">Print</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -80,9 +80,9 @@
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/law">Add New User</a>
-						<a href="/law-data">All Data</a>
-						<a href="/law-print/1">Print</a>
+						<a href="/law">New User</a>
+						<a href="/law/data">All Data</a>
+						<a href="/law/print/1">Print</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -90,9 +90,9 @@
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/pmoa">Add New User</a>
-						<a href="/pmoa-data">All Data</a>
-						<a href="/pmoa-print/1">Print</a>
+						<a href="/pmoa">New User</a>
+						<a href="/pmoa/data">All Data</a>
+						<a href="/pmoa/print/1">Print</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -100,9 +100,9 @@
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown-content">
-						<a href="/media">Add New User</a>
-						<a href="/add-media">All Data</a>
-						<a href="/media-print/1">Media Print</a>
+						<a href="/media">New User</a>
+						<a href="/media/data">All Data</a>
+						<a href="/media/print/1">Media Print</a>
 					</div>
 				</div>
 				<div class="menu-item">
@@ -127,7 +127,7 @@
 	<!-- Main Site -->
 	<main id="site-main">
 		<div class="container">
-			<form action="/acro/list" method="POST">
+			<form action="/acro/data" method="POST">
 				<table class="table">
 					<thead class="thead-dark">
 						<tr>
@@ -192,15 +192,15 @@
 								<td>
 									<div>
 										<form class="left" action="/acro/edit/<%=user._id %>" method="get">
-											<button type="submit" style="color: black;">
+											<button type="submit" style="color: black">
 												<span>
 													<a href="#">
-														<i class="fas fa-pencil-alt"></i>
+														<i style="color: black;" class="fas fa-pencil-alt"></i>
 													</a>
 												</span>
 											</button>
 										</form>
-										<a href="/acro/list" class="right delete">
+										<a href="/acro/data" class="right delete">
 											<span class="">
 												<i style="color: black;" class="fas fa-times"
 													onclick="deleteAllUser('<%=user._id %>')">

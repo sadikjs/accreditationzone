@@ -1,42 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
-        <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ACCREDITATION ZONE</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        <link rel="stylesheet" href="../stylesheets/loopprint.css" />
-        <link rel="stylesheet" href="../stylesheets/print.css" />
-        <link rel="stylesheet" href="../stylesheets/singleprint.css" />
-        <link rel="stylesheet" href="../stylesheets/dropwonbackground.css"/>
-    </head>
-    <body>
-        <div class="main" id="main">
-            <div class="top-title" id="title-print">
-                <div><a style="padding-right:5px" href="/"><i class="fas fa-home"></i></a>
-                    
-                    <a style="padding-left:5px; text-decoration:none " href="/bcb-data"><i class="fas fa-angle-double-left"></i> All Users</a>
-                    <a href="/bcb" style="text-decoration: none;" class="border-shadow">
-                        <span class="text-gradient">New User <i class="fas fa-user"></i></span>
-                    </a>
-                </div>
-                <div><h1>Printing Document</h1></div>
-               <div class="print-iteam dropdown">
-                    <button class="dropbtn">Background</button>
-                        <div class="dropdown-content">
-                            <a href="#">All Page Print:<input type="file" id="image_input" accept="image/png, image/jpg, image/jpeg" /></a>
-                            <a href="#" >Single Page Print: <input type="file" id="single_input" accept="image/png, image/jpg, image/jpeg" /></a>
-                            <a href="#">Signature:<input type="file" id="image_signature" accept="image/png, image/jpg, image/jpeg" /></a>        
-                        </div> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCREDITATION ZONE</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/loopprint.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/acro.css" />
+    <link rel="stylesheet" href="/stylesheets/dropdownmenu.css" />
+    <link rel="stylesheet" href="/stylesheets/print.css" />
+</head>
+
+<body>
+    <div class="menu">
+        <% if(loggedInUser && loggedInUser.username) { %>
+            <div class="navbar">
+                <div>
+                    <a href="/"><i class="fas fa-home"></i>Home</a>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Print</button>
-                        <div class="dropdown-content">
-                            <a href="#"><button id="print-button" class="btn"><i class="fa fa-print"></i>Full-Print</button></a>
-                            <a href="#" ><button id="print-single" class="single-print btn"><i class="fa fa-print"></i>single print</button></a>
-                        </div>
+                    <a class="dropbtn">All Department
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/acro">New User</a>
+                        <a href="/acro/data">All Data</a>
+                        <a href="/acro/print/1">Print</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">BCB & Office
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/bcb">New User</a>
+                        <a href="/bcb/data">All Data</a>
+                        <a href="/bcb/print/1">Print</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Marketing & Commercial
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/marketing">New User</a>
+                        <a href="/marketing/data">All Data</a>
+                        <a href="/marketing/print/1">Print</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Law & Force
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/law">New User</a>
+                        <a href="/law/data">All Data</a>
+                        <a href="/law/print/1">Print</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">PMOA
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/pmoa">New User</a>
+                        <a href="/pmoa/data">All Data</a>
+                        <a href="/pmoa/print/1">Print</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Media
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/media">New User</a>
+                        <a href="/media/data">All Data</a>
+                        <a href="/media/print/1">Media Print</a>
+                    </div>
+                </div>
+                <div class="print-iteam dropdown">
+                    <button class="dropbtn">Background</button>
+                    <div class="dropdown-content">
+                        <a href="#">All Page Print:<input type="file" id="image_input"
+                                accept="image/png, image/jpg, image/jpeg" /></a>
+                        <a href="#">Single Page Print: <input type="file" id="single_input"
+                                accept="image/png, image/jpg, image/jpeg" /></a>
+                        <a href="#">Signature:<input type="file" id="image_signature"
+                                accept="image/png, image/jpg, image/jpeg" /></a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Print</a>
+                    <div class="dropdown-content">
+                        <a href="#">
+                            <span id="print-button" class="btn">
+                                <i class="fa fa-print"></i>
+                                Full-Print
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span id="print-single" class="single-print btn">
+                                <i class="fa fa-print">
+                                </i>single print
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="#" onclick="logout()">Logout</a>
                 </div>
             </div>
+            <% } else { %>
+                <div class="menu-item"><a href="/users">Users</a></div>
+                <div class="menu-item"><a href="/">Login</a></div>
+                <% } %>
+    </div>
             <table id="table">
                 <tbody>
                 <% users.forEach(function(user) { %>
@@ -92,21 +173,21 @@
             <div class="pagination" id="pagination">
                     <ul>
                         <%  if(currentPage > 1){ %>
-                                <li><a href="/law-print/<%= parseInt(currentPage) -1 %>"> Pre</a></li>
+                                <li><a href="/law/print/<%= parseInt(currentPage) -1 %>"> Pre</a></li>
                         <%  } %>
                                 <% for( let i = startLoop; i<= endLoop; i++) { %>
-                                    <li><a href="/law-print/<%= i %>"> <%= i %> </a></li>
+                                    <li><a href="/law/print/<%= i %>"> <%= i %> </a></li>
                                 <% } %>
                                 <% if (currentPage < totalPage) { %>
-                                <li><a href="/law-print/<%= parseInt(currentPage) + 1 %>"> Next</a></li>
+                                <li><a href="/law/print/<%= parseInt(currentPage) + 1 %>"> Next</a></li>
                                 <% } %>
                     </ul>
                 </div>
             <% } %>
-        <script src="../js/print.js"></script>
-        <script src="../js/background.js"></script>
-        <script src="../js/singleprint.js"></script>
-        <script src="../js/signature.js"></script>
-        <script src="../js/singlebackground.js"></script>
+        <script src="/js/print.js"></script>
+        <script src="/js/background.js"></script>
+        <script src="/js/singleprint.js"></script>
+        <script src="/js/signature.js"></script>
+        <script src="/js/singlebackground.js"></script>
     </body>
 </html>

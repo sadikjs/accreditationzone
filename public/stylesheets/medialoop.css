@@ -29,6 +29,7 @@ table{
     width: 1082px;
     margin: 0 auto;
     height: 1570px;
+    background: white;
 }
 /* loop four */
 table> tbody> tr:nth-last-child(4){

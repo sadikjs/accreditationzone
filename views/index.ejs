@@ -35,7 +35,9 @@
   </script>
 </head>
 
-<body>
+<body
+style="height: 100vh;"
+>
   <div class="menu">
     <% if(loggedInUser && loggedInUser.username) { %>
       <div class="navbar">
@@ -46,18 +48,8 @@
           </button>
           <div class="dropdown-content">
             <a href="/acro">Acro New User</a>
-            <a href="/acro/list">Acro list</a>
+            <a href="/acro/data">Acro list</a>
             <a href="/acro/print/1">Print</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">MARKETING & COMMERCIAL
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="/marketing">Add New User</a>
-            <a href="marketing-data">All Data</a>
-            <a href="/marketing-print/1">Print</a>
           </div>
         </div>
         <div class="dropdown">
@@ -66,8 +58,18 @@
           </button>
           <div class="dropdown-content">
             <a href="/bcb">Add New User</a>
-            <a href="/bcb-data">All Data</a>
-            <a href="/bcb-print/1">Print</a>
+            <a href="/bcb/data">All Data</a>
+            <a href="/bcb/print/1">Print</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">MARKETING & COMMERCIAL
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/marketing">Add New User</a>
+            <a href="/marketing/data">All Data</a>
+            <a href="/marketing/print/1">Print</a>
           </div>
         </div>
         <div class="dropdown">
@@ -76,8 +78,8 @@
           </button>
           <div class="dropdown-content">
             <a href="/law">Add New User</a>
-            <a href="/law-data">All Data</a>
-            <a href="/law-print/1">Print</a>
+            <a href="/law/data">All Data</a>
+            <a href="/law/print/1">Print</a>
           </div>
         </div>
         <div class="dropdown">
@@ -86,8 +88,8 @@
           </button>
           <div class="dropdown-content">
             <a href="/pmoa">Add New User</a>
-            <a href="/pmoa-data">All Data</a>
-            <a href="/pmoa-print/1">Print</a>
+            <a href="/pmoa/data">All Data</a>
+            <a href="/pmoa/print/1">Print</a>
           </div>
         </div>
         <div class="dropdown">
@@ -96,15 +98,13 @@
           </button>
           <div class="dropdown-content">
             <a href="/media">Add New User</a>
-            <a href="/add-media">All Data</a>
-            <a href="/media-print/1">Media Print</a>
+            <a href="/media/data">All Data</a>
+            <a href="/media/print/1">Media Print</a>
           </div>
         </div>
       </div>
       <div class="menu-item"><a href="#" onclick="logout()">Logout</a></div>
-      <% } else { %>
-        <div class="menu-item"><a href="/">Login</a></div>
-        <% } %>
+      <% } %>
 
   </div>
 

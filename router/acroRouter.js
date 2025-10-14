@@ -17,8 +17,8 @@ router.get("/edit/:id", decorateHtmlResponse("edit"),checkLogin, getEdit);
 //update
 router.post("/update/:id", decorateHtmlResponse("update"),checkLogin, getUpdate);
 //route
-router.get("/list", decorateHtmlResponse("Add-User"), checkLogin, getAddUser);
-router.delete("/list/:id", removeAllUser);
+router.get("/data", decorateHtmlResponse("Add-User"), checkLogin, getAddUser);
+router.delete("/data/:id", removeAllUser);
 router.get("/print/:page", decorateHtmlResponse("print"), checkLogin, getAddPrint);
 
 module.exports = router;
