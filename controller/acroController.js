@@ -106,7 +106,7 @@ async function addTeam(req, res, next) {
         res.status(200).json({
             message: " Your post was added successfully"
         },
-            res.redirect("/acro"))
+        res.redirect("/acro"))
     } catch (err) {
         res.status(500).json({
             message: err.message
@@ -129,12 +129,14 @@ const getEdit = async (req, res, next) => {
 const getUpdate = async (req, res, next) => {
     try {
         const result = await Team.findByIdAndUpdate(req.params.id, req.body)
+        if(result){
+            res.redirect("/acro/data")
+        }
     } catch (err) {
         res.status(500).json({
             err: err.message
         })
     }
-    res.redirect("/acro/list")
 }
 
 

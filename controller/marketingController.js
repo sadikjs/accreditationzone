@@ -190,12 +190,14 @@ const getAddMarketingPrint =async(req, res, next)=> {
 const getUpadateMarketing = async (req, res, next)=>{
     try{
         const result = await Marketing.findByIdAndUpdate(req.params.id, req.body)
+        if(result){
+            res.redirect("/marketing/data")
+        }
     }catch(err){
         res.status(500).json({
             err: err.message
         })
     }
-    res.redirect("/marketing-data")
     
     }
 

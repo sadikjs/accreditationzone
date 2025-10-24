@@ -60,15 +60,15 @@ table>tbody>tr.grid-container:nth-last-child(4) {
 
 .item4 {
     grid-area: picture;
-    width: 170px;
-    height: 190px;
+    width: 190px;
+    height: 192px;
 }
 
 .item4 img {
     grid-area: picture;
     display: grid;
-    width: 160px;
-    height: 180px;
+    width: 172px;
+    height: 192px;
     display: block;
     margin: 0 auto;
 }
@@ -83,7 +83,7 @@ table>tbody>tr.grid-container:nth-last-child(4) {
 .item5>.rotate {
     position: absolute;
     height: 56px;
-    width: 231px;
+    width: 265px;
     font-weight: 700;
     font-size: 32px;
     color: #0A1754;
@@ -103,15 +103,15 @@ table>tbody>tr.grid-container:nth-last-child(4) {
 }
 
 .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
-    color: white;
+    color: #0A1754;
     font-family: "Arial"
 }
 
@@ -379,15 +379,15 @@ table>tbody>tr.grid-container:nth-last-child(3) {
 
 .item4 {
     grid-area: picture;
-    width: 170px;
-    height: 190px;
+    width: 190px;
+    height: 192px;
 }
 
 .item4 img {
     grid-area: picture;
     display: grid;
-    width: 160px;
-    height: 180px;
+    width: 172px;
+    height: 192px;
     display: block;
     margin: 0 auto;
 }
@@ -401,7 +401,7 @@ table>tbody>tr.grid-container:nth-last-child(3) {
 .item5>.rotate {
     position: absolute;
     height: 56px;
-    width: 231px;
+    width: 265px;
     font-weight: 700;
     font-size: 32px;
     color: #0A1754;
@@ -421,15 +421,15 @@ table>tbody>tr.grid-container:nth-last-child(3) {
 }
 
 .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
-    color: white;
+    color: #0A1754;
 }
 
 .item7 {
@@ -702,15 +702,15 @@ table>tbody>tr.grid-container:nth-last-child(2) {
 
 .item4 {
     grid-area: picture;
-    width: 170px;
-    height: 190px;
+    width: 190px;
+    height: 192px;
 }
 
 .item4 img {
     grid-area: picture;
     display: grid;
-    width: 160px;
-    height: 180px;
+    width: 172px;
+    height: 192px;
     display: block;
     margin: 0 auto;
 }
@@ -724,7 +724,7 @@ table>tbody>tr.grid-container:nth-last-child(2) {
 .item5>.rotate {
     position: absolute;
     height: 56px;
-    width: 231px;
+    width: 265px;
     font-weight: 700;
     font-size: 32px;
     color: #0A1754;
@@ -744,15 +744,15 @@ table>tbody>tr.grid-container:nth-last-child(2) {
 }
 
 .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
-    color: white;
+    color: #0A1754;
 }
 
 .item7 {
@@ -1022,14 +1022,14 @@ table>tbody>tr.grid-container:nth-last-child(1) {
 .item4 {
     grid-area: picture;
     width: 190px;
-    height: 190px;
+    height: 192px;
 }
 
 .item4 img {
     grid-area: picture;
     display: grid;
-    width: 170px;
-    height: 190px;
+    width: 172px;
+    height: 192px;
     display: block;
     margin: 0 auto;
 }
@@ -1043,7 +1043,7 @@ table>tbody>tr.grid-container:nth-last-child(1) {
 .item5>.rotate {
     position: absolute;
     height: 56px;
-    width: 231px;
+    width: 265px;
     font-weight: 700;
     font-size: 32px;
     color: #0A1754;
@@ -1063,15 +1063,15 @@ table>tbody>tr.grid-container:nth-last-child(1) {
 }
 
 .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
-    color: white;
+    color: #0A1754;
 }
 
 .item7 {

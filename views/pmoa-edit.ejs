@@ -171,7 +171,7 @@
             </div>
             <div class="form-right">
               <label id="icon" for="name">ZONE TWO: <!-- <i class="fas fa-envelope"></i> --></label> 
-              <select id="cars" name="zonetwo>
+              <select id="cars" name="zonetwo">
               <% zonetwo.forEach(card => { %>
                 <option value="<%= card.value %>" <%= (data.zonetwo === card.value) ? 'selected' : "" %>> <%= card.label %> </option>
             <% }) %>

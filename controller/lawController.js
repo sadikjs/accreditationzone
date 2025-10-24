@@ -192,12 +192,14 @@ const getAddLawPrint = async (req, res, next) => {
 const getUpadateLaw = async (req, res, next)=>{
     try{
         const result = await Law.findByIdAndUpdate(req.params.id, req.body)
+        if(result){
+            res.redirect("/law/data")
+        }
     }catch(err){
         res.status(500).json({
             err: err.message
         })
     }
-    res.redirect("/law-data")
     
     }
     

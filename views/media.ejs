@@ -41,7 +41,6 @@
 
 <body>
   <div class="menu">
-    <% if(loggedInUser && loggedInUser.username) { %>
       <div class="navbar">
         <div>
           <a href="/"><i class="fas fa-home"></i>Home</a>
@@ -110,10 +109,6 @@
           <a href="#" onclick="logout()">Logout</a>
         </div>
       </div>
-      <% } else { %>
-        <div class="menu-item"><a href="/users">Users</a></div>
-        <div class="menu-item"><a href="/">Login</a></div>
-        <% } %>
   </div>
     <div class="main-block">
         <h1>Add New User</h1>
@@ -251,7 +246,9 @@
             <hr>
             <div class="btn-block">
               <p>By clicking Register</p>
-              <button type="submit" value="Submit">Submit</button>
+              <button 
+              style="cursor: pointer;"
+              type="submit" value="Submit">Submit</button>
             </div>
       </form>
   </div>

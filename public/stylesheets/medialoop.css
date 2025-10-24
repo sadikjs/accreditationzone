@@ -60,8 +60,8 @@ margin-right: 3px;
 .item4 img{
     grid-area: picture;
     display: grid;
-    width: 170px;
-    height: 190px;
+    width: 172px;
+    height: 192px;
     display: block;
     margin: 0 auto;
 }
@@ -74,7 +74,7 @@ margin-right: 3px;
 .item5> .rotate {
     position: absolute;
     height: 56px;
-    width: 231px;
+    width: 265px;
     font-weight: 700;
     font-size: 32px;
     color: white;
@@ -92,12 +92,12 @@ margin-right: 3px;
     height:57px;
 }
 .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
     color: white;
@@ -351,13 +351,13 @@ table> tbody> tr.grid-container:nth-last-child(3){
     .item4{
         grid-area: picture;
         width: 190px;
-        height: 190px;
+        height: 192px;
     }
     .item4 img{
         grid-area: picture;
         display: grid;
-        width: 170px;
-        height: 190px;
+        width: 172px;
+        height: 192px;
         display: block;
         margin: 0 auto;
     }
@@ -369,7 +369,7 @@ table> tbody> tr.grid-container:nth-last-child(3){
     .item5> .rotate {
         position: absolute;
         height: 56px;
-        width: 231px;
+        width: 265px;
         font-weight: 700;
         font-size: 32px;
         color: white;
@@ -387,12 +387,12 @@ table> tbody> tr.grid-container:nth-last-child(3){
         height:57px;
     }
     .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
     color: white;
@@ -654,14 +654,14 @@ table> tbody> tr.grid-container:nth-last-child(2){
     }
     .item4{
         grid-area: picture;
-        width: 170px;
-        height: 190px;
+        width: 190px;
+        height: 192px;
     }
     .item4 img{
         grid-area: picture;
         display: grid;
-        width: 160px;
-        height: 180px;
+        width: 172px;
+        height: 192px;
         display: block;
         margin: 0 auto;
     }
@@ -674,7 +674,7 @@ table> tbody> tr.grid-container:nth-last-child(2){
     .item5> .rotate {
         position: absolute;
         height: 56px;
-        width: 231px;
+        width: 265px;
         font-weight: 700;
         font-size: 32px;
         color: white;
@@ -692,12 +692,12 @@ table> tbody> tr.grid-container:nth-last-child(2){
         height:57px;
     }
     .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
     color: white;
@@ -956,13 +956,13 @@ table> tbody> tr.grid-container:nth-last-child(1){
     .item4{
         grid-area: picture;
         width: 190px;
-        height: 190px;
+        height: 192px;
     }
     .item4 img{
         grid-area: picture;
         display: grid;
-        width: 170px;
-        height: 190px;
+        width: 172px;
+        height: 192px;
         display: block;
         margin: 0 auto;
     }
@@ -974,7 +974,7 @@ table> tbody> tr.grid-container:nth-last-child(1){
     .item5> .rotate {
         position: absolute;
         height: 56px;
-        width: 231px;
+        width: 265px;
         font-weight: 700;
         font-size: 32px;
         color: white;
@@ -992,12 +992,12 @@ table> tbody> tr.grid-container:nth-last-child(1){
         height:57px;
     }
     .item6>p {
-    width: 445px;
+    width: 495px;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     padding: 6px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     border-radius: 25px;
     color: white;

@@ -205,7 +205,6 @@
           <label id="icon" for="name">ZONE THREE: <!-- <i class="fas fa-envelope"></i> --></label>
           <select id="cars" name="zonethree">
             <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value=""></option>
             <option value="3">3</option>
             <option value="X">X</option>
           </select>
@@ -249,12 +248,12 @@
       <hr>
       <div class="btn-block">
         <p>By clicking Register</p>
-        <button type="submit" value="Submit">Submit</button>
+        <button style="cursor: pointer;" type="submit" value="Submit">Submit</button>
       </div>
     </form>
   </div>
   <script>
-    const form = document.querySelector("#acro-user");
+    const form = document.querySelector("#acro");
     //success Toast
     const datasave = Toastify({
       text: "data save success",
@@ -281,6 +280,7 @@
 
       //get response 
       let result = await response.json();
+      form.reset();
 
       if (result.err) {
         errorData.showToast();

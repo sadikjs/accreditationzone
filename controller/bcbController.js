@@ -165,12 +165,14 @@ try{
 const getUpadateBcb = async (req, res, next)=>{
     try{
         const result = await Bcb.findByIdAndUpdate(req.params.id, req.body)
+        if(result){
+            res.redirect("/bcb/data")
+        }
     }catch(err){
         res.status(500).json({
             err: err.message
         })
     }
-    res.redirect("/bcb-data")
     
     }
     

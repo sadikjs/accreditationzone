@@ -1,7 +1,7 @@
 const express = require("express");
 const decorateHtmlResponse = require("../middlewares/common/decorateHtmlResponse");
 const {checkLogin} = require("../middlewares/common/checkLogin");
-const upload = require("../middlewares/pmoa/upload")
+const upload = require("../middlewares/media/upload")
 const {
      getMedia,
      addMedia, 

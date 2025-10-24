@@ -192,12 +192,14 @@ const getAddPmoaPrint =async(req, res, next)=> {
 const getUpadatePmoa = async (req, res, next)=>{
     try{
         const result = await Pmoa.findByIdAndUpdate(req.params.id, req.body)
+        if(result){
+            res.redirect("/pmoa/data")
+        }
     }catch(err){
         res.status(500).json({
             err: err.message
         })
     }
-    res.redirect("/pmoa-data")
     
     }
 
