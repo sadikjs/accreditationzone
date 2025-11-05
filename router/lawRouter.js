@@ -28,6 +28,6 @@ router.get("/edit/:id", decorateHtmlResponse("Law-edit"), checkLogin, getlawEdit
 router.post("/update/:id", decorateHtmlResponse("update"),checkLogin, getUpadateLaw);
 //route
 router.get("/data", decorateHtmlResponse("Law-Data"), checkLogin, getlawData);
-router.delete("/:id", removeLawAllUser);
+router.delete("/delete/:id", removeLawAllUser);
 
 module.exports = router;

@@ -18,7 +18,7 @@ const router = express.Router();
 router.get("/", decorateHtmlResponse("Media"), getMedia);
 router.post("/", upload.single("image"), addMedia)
 router.get("/data", decorateHtmlResponse("Add-Media"), getAddAllMedia);
-router.delete("/:id", removeAllMediaUser);
+router.delete("/delete/:id", removeAllMediaUser);
 router.get("/print/:page", decorateHtmlResponse("Media-print"), checkLogin, getAddMedia);
 router.get("/edit/:id", decorateHtmlResponse("Media-edit"), getMediaEdit);
 

@@ -23,7 +23,7 @@ router.post("/",upload.single("image"), addBcboffice)
 
 //route
 router.get("/data", decorateHtmlResponse("bcb"), checkLogin, getbcbData);
-router.delete("/:id", removeBcbAllUser);
+router.delete("/delete/:id", removeBcbAllUser);
 
 router.get("/edit/:id", decorateHtmlResponse("BCB-edit"), checkLogin, getBcbEdit);
 router.get("/print/:page", decorateHtmlResponse("print"), checkLogin, getAddBcbPrint);

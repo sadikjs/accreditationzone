@@ -7,10 +7,10 @@ image_input.addEventListener("change", function(){
     const reader = new FileReader();
     reader.addEventListener("load", ()=>{
         upload_image = reader.result;
-        const esfour = document.querySelector("tr#display_image:nth-last-child(4)").style;
-        const esthree = document.querySelector("tr#display_image:nth-last-child(3)").style;
-        const estwo = document.querySelector("tr#display_image:nth-last-child(2)").style;
-        const esone = document.querySelector("tr#display_image:nth-last-child(1)").style;
+        const esfour = document.querySelector("div#display_image:nth-last-child(4)").style;
+        const esthree = document.querySelector("div#display_image:nth-last-child(3)").style;
+        const estwo = document.querySelector("div#display_image:nth-last-child(2)").style;
+        const esone = document.querySelector("div#display_image:nth-last-child(1)").style;
         esfour.backgroundImage=`url(${upload_image})`;
         esthree.backgroundImage=`url(${upload_image})`;
         estwo.backgroundImage=`url(${upload_image})`;

@@ -196,7 +196,7 @@
   
 		//delete document
 		async function deleteAllUser(userId){
-		  let response = await fetch(`/marketing/${userId}`, {
+		  let response = await fetch(`/marketing/delete/${userId}`, {
 			method: "DELETE"
 		  });
 		  

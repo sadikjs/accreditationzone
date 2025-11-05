@@ -7,15 +7,14 @@
     <title>ACCREDITATION ZONE</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/loopprint.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/acro.css" />
     <link rel="stylesheet" href="/stylesheets/dropdownmenu.css" />
     <link rel="stylesheet" href="/stylesheets/print.css" />
 </head>
 
-<body>
-    <div class="menu">
+<body class="w-full m-0 p-0 flex">
+    <div class="w-full flex">
         <% if(loggedInUser && loggedInUser.username) { %>
             <div class="navbar">
                 <div>
@@ -118,43 +117,118 @@
                 <div class="menu-item"><a href="/">Login</a></div>
                 <% } %>
     </div>
-            <table id="table">
-                <tbody>
+            <div id="table" class="flex w-[1082px] h-[1570px] justify-center items-center">
+                <div class="w-[1082px] h-[1570px] grid grid-cols-2">
                 <% users.forEach(function(user) { %>
-                    <tr class="velue-tr grid-container" id="display_image">
-                            <td class="item1"></td>
-                            <td class="item2"></td>
-                            <td  class="item3"></td>
-                            <td class="item4">
-                                <% if(user.image) { %>
-                                <img src="/uploads/lawAvatars/<%= user.image %>"  width="180px" height="180px"/>
+                    <div id="display_image"
+                    class="w-[534px] h-[780px] grid grid-cols-6 justify-center justify-items-center bg-center bg-cover border border-slate-400"
+                    >
+                    <div class="row-start-1 col-span-6 col-start-1 col-end-7 w-[500px] h-52 grid items-center justify-center"></div>
+                    <div class="w-[180px] h-[180px] row-start-2 col-span-2 col-start-3 col-end-5 flex items-center justify-center" >
+                        <% if(user.image) { %>
+                        <img class="w-[180px] h-[180px]" src="/uploads/lawAvatars/<%= user.image %>" />
+                        <% } else { %>
+                            <img src="/images/nophoto.png" width="40%" />
+                        <% } %>
+                        </div>
+                        <div class="h-[190px]row-start-2 col-span-2 col-end-7">
+                            <p class="!text-[#0A1754] !font-bold !text-[31px] !m-0 !font-sans -rotate-90 !pb-16 !pr-16">
+                                <%= user.vanue %>
+                            </p>
+                        </div>
+                        <div id="signat"
+                        class="w-25 h-[40px] !z-10 row-start-3 col-span-2 col-start-3 col-end-5 !bg-center !bg-cover flex justify-center items-center">
+                    </div>
+                    <div
+                    class="w-[495px] h-[57px] row-start-4 col-span-6 col-start-1 col-end-7 flex items-center justify-center">
+                    <p class="!font-bold !font-sans !text-[#0A1754] !text-[32px] uppercase m-0">
+                        <%= user.fullname %>
+                    </p>
+                </div>
+                <div
+                class="w-[466px] h-[40px] row-start-5 col-span-6 col-start-1 col-end-7 flex items-center justify-center">
+                <p class="!m-0 !font-bold !font-sans !text-[#0A1754] uppercase !text-[25px]">
+                    <%= user.designation %>
+                </p>
+            </div>
+            <div
+            class="w-[438px] h-[45px] row-start-6 col-span-6 col-start-1 col-end-7 flex items-center justify-center">
+            <p class="!font-bold !font-sans !text-[27px] !text-[#0A1754]">
+                <%= user.organization %>
+            </p>
+        </div> 
+        <div class="w-[500px] row-start-7 col-span-6 flex items-center justify-center gap-x-2">
+            <% if(user.zoneone === "X") { %>
+                <p></p>
+                <% } else { %>
+                <div class="w-[80px] h-[80px] row-start-7 col-start-1 col-end-2">
+                    <p
+                        class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                        <%= user.zoneone %>
+                    </p>
+                </div>
+                <% } %>
+                    <% if(user.zonetwo==="X") { %>
+                        <p></p>
+                        <% } else { %>
+                        <div class="w-[80px] h-[80px] row-start-7 col-start-2 col-end-3">
+                            <p
+                                class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                                <%= user.zonetwo %>
+                            </p>
+                        </div>
+                        <% } %>
+                            <% if(user.zonethree==="X" ) { %>
+                                <p></p>
                                 <% } else { %>
-                                    <img src="/images/nophoto.png" width="40%" />
+                                <div class="w-[80px] h-[80px] row-start-7 col-start-3 col-end-4">
+                                    <p class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                                        <%= user.zonethree %>
+                                    </p>
+                                </div>
                                 <% } %>
-                            </td>
-                            <td class="item5"><span class="rotate"><%= user.vanue %></span></td>
-                            <td class="item17" style="width: 100px;"></td>
-                            <td  class="item6"><p><%= user.fullname %></p></td>
-                            <td class="item7"><p><%= user.designation %></p></td>
-                            <td class="item16"><p><%= user.organization %></p></td> 
-                            <td class="item8"><p><%= user.zoneone %></p></td>
-                           <td class="item9"><p><%= user.zonetwo %></p></td>
-                           <td class="item10"><p><%= user.zonethree %></p></td>
-                            <td class="item11"><p><%= user.zonefour %></p></td>
-                            <td  class="item12"><p><%= user.zonefive %></p></td>
-                            <td class="item13"><p><%= user.zonesix %></p></td>
-                            <td class="item14"></td>
-                            <td class="item15"><p><%= user.cardfooter %></p></td>
-                            <td class="item18"></td>
-                            <td class="item19"></td>
-                            <td class="item20"></td>
-                            <td class="item21"></td> 
-                            
-                                
-                        </tr>
+                                <% if(user.zonefour === "X") { %>
+                                    <p></p>
+                                    <% } else { %>
+                                        <div class="w-[80px] h-[80px] row-start-7 col-start-4 col-end-5">
+                                            <p
+                                                class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                                                <%= user.zonefour %>
+                                            </p>
+                                        </div>
+                                        <% } %>
+                                        <% if(user.zonefive === "X") { %>
+                                            <p></p>
+                                            <% } else { %>
+                                        <div
+                                        class="w-[80px] h-[80px] row-start-7 col-start-5 col-end-6">
+                                                <p class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                                                    <%= user.zonefive %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                                                    <% if(user.zonesix==="X" ) { %>
+                                                        <p></p>
+                                                        <% } else { %>
+                                                            <div
+                                                            class="w-[80px] h-[80px] row-start-7 col-start-6 col-end-7">
+                                                            <p
+                                                                class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
+                                                                <%= user.zonesix %>
+                                                            </p>
+                                                        </div>
+                                                        <% } %>
+        </div>
+        <div
+        class="h-[105px] row-start-8 col-span-6 col-start-1 col-end-7 flex justify-center items-center">
+        <p class="!font-bold !text-4xl !text-[#0A1754] !m-0 !font-sans">
+            <%= user.cardfooter %>
+        </p>
+    </div>
+</div>
                     <% })%>
-                 </tbody>
-            </table>
+</div>
+</div>
         </div>
         <% 
         let totalPage = Math.ceil(count/perPage);
@@ -170,8 +244,8 @@
         }
         %>
         <%  if (count > 4) { %>
-            <div class="pagination" id="pagination">
-                    <ul>
+            <div class="!flex !flex-row !text-white" id="pagination">
+                    <ul class="!flex !flex-row !text-white !justify-center !items-center gap-x-2">
                         <%  if(currentPage > 1){ %>
                                 <li><a href="/law/print/<%= parseInt(currentPage) -1 %>"> Pre</a></li>
                         <%  } %>
@@ -189,5 +263,6 @@
         <script src="/js/singleprint.js"></script>
         <script src="/js/signature.js"></script>
         <script src="/js/singlebackground.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </body>
 </html>

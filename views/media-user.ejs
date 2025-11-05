@@ -227,7 +227,7 @@
 
 		//delete document
 		async function deleteAllUser(userId) {
-			let response = await fetch(`add-media/${userId}`, {
+			let response = await fetch(`/media/delete/${userId}`, {
 				method: "DELETE"
 			});
 

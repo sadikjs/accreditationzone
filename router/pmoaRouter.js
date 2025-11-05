@@ -31,7 +31,7 @@ router.get("/print/:page", decorateHtmlResponse("print"), checkLogin, getAddPmoa
 router.post("/update/:id", decorateHtmlResponse("update"),checkLogin, getUpadatePmoa);
 //route
 router.get("/data", decorateHtmlResponse("Pmoa-Data"), checkLogin, getpmoaData);
-router.delete("/:id", removePmoaAllUser);
+router.delete("/delete/:id", removePmoaAllUser);
 
 
 module.exports = router;

@@ -39,218 +39,220 @@
   </script>
 </head>
 
-<body>
-  <div class="menu">
-    <% if(loggedInUser && loggedInUser.username) { %>
-      <div class="navbar">
-        <div>
-          <a href="/"><i class="fas fa-home"></i>Home</a>
-        </div>
-        <div class="dropdown">
-          <a class="dropbtn">All Department
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/acro">New User</a>
-            <a href="/acro/data">All Data</a>
-            <a href="/acro/print/1">Print</a>
+<body class="min-h-screen">
+  <div class="min-h-screen background: linear-gradient(0deg, rgba(112, 41, 16, 1) 12%, rgba(117, 21, 32, 1) 20%, rgba(16, 97, 39, 1) 74%, rgba(26, 122, 64, 1) 88%, rgba(46, 158, 100, 1) 100%, rgba(10, 128, 32, 1) 100%);">
+    <div class="menu">
+      <% if(loggedInUser && loggedInUser.username) { %>
+        <div class="navbar">
+          <div>
+            <a href="/"><i class="fas fa-home"></i>Home</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">All Department
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/acro">New User</a>
+              <a href="/acro/data">All Data</a>
+              <a href="/acro/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">BCB & Office
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/bcb">New User</a>
+              <a href="/bcb/data">All Data</a>
+              <a href="/bcb/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Marketing & Commercial
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/marketing">New User</a>
+              <a href="/marketing/data">All Data</a>
+              <a href="/marketing/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Law & Force
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/law">New User</a>
+              <a href="/law/data">All Data</a>
+              <a href="/law/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">PMOA
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/pmoa">New User</a>
+              <a href="/pmoa/data">All Data</a>
+              <a href="/pmoa/print/1">Print</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Media
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/media">New User</a>
+              <a href="/media/data">All Data</a>
+              <a href="/media/print/1">Media Print</a>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="#" onclick="logout()">Logout</a>
           </div>
         </div>
-        <div class="dropdown">
-          <a class="dropbtn">BCB & Office
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/bcb">New User</a>
-            <a href="/bcb/data">All Data</a>
-            <a href="/bcb/print/1">Print</a>
+        <% } else { %>
+          <div class="menu-item"><a href="/users">Users</a></div>
+          <div class="menu-item"><a href="/">Login</a></div>
+          <% } %>
+    </div>
+    <div class="main-block">
+      <h1>Add New User</h1>
+      <form action="/acro" method="post" enctype="multipart/form-data" id="acro-user">
+        <hr>
+        <div class="colums">
+          <div class="form-left">
+            <label id="icon" for="name"><i class="fas fa-pen"></i></label>
+            <input type="text" name="manualnumber" id="manualnumber" placeholder="MANUAl SL" required />
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name"><i class="fas fa-file-signature"></i></label>
+            <input type="text" name="fullname" id="fullname" placeholder="FULL NAME" required />
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name"><i class="fas fa-user-edit"></i></label>
+            <input type="text" name="designation" id="designation" placeholder="DESIGNATION" />
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name"><i class="fas fa-columns"></i></label>
+            <input type="text" name="organization" id="organizationname" placeholder="ORGANIZATION" />
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name"><i class="fas fa-passport"></i></i></label>
+            <input type="text" name="nidno" id="nidpassport" placeholder="NID/PASSPORT/BIRTH ID" required />
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name"><i class="fas fa-file-signature"></i></label>
+            <input type="text" name="phone" id="phone" placeholder="PHONE NO" />
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name">CARD TYPE: </label>
+            <select id="cars" name="cardname">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="TYPE A">TYPE A</option>
+              <option value="TYPE B">TYPE B</option>
+              <option value="TYPE C">TYPE C</option>
+              <option value="TYPE G">TYPE G</option>
+              <option value="OFFICIAL BCB">OFFICIAL BCB</option>
+              <option value="STAFF BCB">STAFF BCB</option>
+              <option value="ACU">ACU</option>
+              <option value="ORGANIZINE COMMITTEE">ORGANIZINE COMMITTEE</option>
+              <option value="SUB-COMMITTEE">SUB-COMMITTEE</option>
+              <option value="T & S">T & S</option>
+              <option value="LOGISTICS & PROTOCOL">LOGISTICS & PROTOCOL</option>
+              <option value="VENDOR">VENDOR</option>
+              <option value="SERVICE PROVIDER">SERVICE PROVIDER</option>
+              <option value="ON DUTY">ON DUTY</option>
+              <option value="SPONSOR">SPONSOR</option>
+              <option value="MEDIA CENTER">MEDIA CENTER</option>
+              <option value="SPECIAL ENCLOSURE">SPECIAL ENCLOSURE</option>
+              <option value="MEDIA">MEDIA</option>
+              <option value="ANTI-DOPING">ANTI-DOPING</option>
+              <option value="CLEANER">CLEANER</option>
+            </select>
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name">VENUES: <!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="vanue">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="DHAKA">DHAKA</option>
+              <option value="CHATTOGRAM">CHATTOGRAM</option>
+              <option value="SYLHET">SYLHET</option>
+              <option value="RAJSHAHI">RAJSHAHI</option>
+              <option value="BOGURA">BOGURA</option>
+              <option value="ALL VENUE">ALL VENUE</option>
+              <option value="SKICS">SKICS</option>
+              <option value="SBNCS">SBNCS</option>
+              <option value="ZACS">ZACS</option>
+              <option value="SICS">SICS</option>
+            </select>
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name">ZONE ONE: <!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zoneone">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option selected="selected" value="1">1</option>
+            </select>
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name">ZONE TWO: <!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zonetwo">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="X">X</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name">ZONE THREE: <!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zonethree">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="3">3</option>
+              <option value="X">X</option>
+            </select>
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name">ZONE FOUR:<!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zonefour">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="X">X</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name">ZONE FIVE: <!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zonefive">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="X">X</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-right">
+            <label id="icon" for="name">ZONE SIX:<!-- <i class="fas fa-envelope"></i> --></label>
+            <select id="cars" name="zonesix">
+              <option value="SELECT AN ITEM">SELECT AN ITEM</option>
+              <option value="X">X</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="form-left">
+            <label id="icon" for="name">FORM NO:</label>
+            <input type="text" name="formno" id="name" placeholder="FORM NO" required />
+          </div>
+          <div class="form-right">
+            <label id="icon" for="cardtype"> CARD TYPE:</label>
+            <input type="text" name="cardfooter" id="cardname" placeholder="CARD TYPE">
           </div>
         </div>
-        <div class="dropdown">
-          <a class="dropbtn">Marketing & Commercial
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/marketing">New User</a>
-            <a href="/marketing/data">All Data</a>
-            <a href="/marketing/print/1">Print</a>
-          </div>
+        <div class="circleavatar">
+          <input type="file" id="image" name="image">
         </div>
-        <div class="dropdown">
-          <a class="dropbtn">Law & Force
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/law">New User</a>
-            <a href="/law/data">All Data</a>
-            <a href="/law/print/1">Print</a>
-          </div>
+        <hr>
+        <div class="btn-block">
+          <p>By clicking Register</p>
+          <button style="cursor: pointer; background: blue;" type="submit" value="Submit">Submit</button>
         </div>
-        <div class="dropdown">
-          <a class="dropbtn">PMOA
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/pmoa">New User</a>
-            <a href="/pmoa/data">All Data</a>
-            <a href="/pmoa/print/1">Print</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a class="dropbtn">Media
-            <i class="fa fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="/media">New User</a>
-            <a href="/media/data">All Data</a>
-            <a href="/media/print/1">Media Print</a>
-          </div>
-        </div>
-        <div class="menu-item">
-          <a href="#" onclick="logout()">Logout</a>
-        </div>
-      </div>
-      <% } else { %>
-        <div class="menu-item"><a href="/users">Users</a></div>
-        <div class="menu-item"><a href="/">Login</a></div>
-        <% } %>
-  </div>
-  <div class="main-block">
-    <h1>Add New User</h1>
-    <form action="/acro" method="post" enctype="multipart/form-data" id="acro-user">
-      <hr>
-      <div class="colums">
-        <div class="form-left">
-          <label id="icon" for="name"><i class="fas fa-pen"></i></label>
-          <input type="text" name="manualnumber" id="manualnumber" placeholder="MANUAl SL" required />
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name"><i class="fas fa-file-signature"></i></label>
-          <input type="text" name="fullname" id="fullname" placeholder="FULL NAME" required />
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name"><i class="fas fa-user-edit"></i></label>
-          <input type="text" name="designation" id="designation" placeholder="DESIGNATION" />
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name"><i class="fas fa-columns"></i></label>
-          <input type="text" name="organization" id="organizationname" placeholder="ORGANIZATION" />
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name"><i class="fas fa-passport"></i></i></label>
-          <input type="text" name="nidno" id="nidpassport" placeholder="NID/PASSPORT/BIRTH ID" required />
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name"><i class="fas fa-file-signature"></i></label>
-          <input type="text" name="phone" id="phone" placeholder="PHONE NO" />
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name">CARD TYPE: </label>
-          <select id="cars" name="cardname">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="TYPE A">TYPE A</option>
-            <option value="TYPE B">TYPE B</option>
-            <option value="TYPE C">TYPE C</option>
-            <option value="TYPE G">TYPE G</option>
-            <option value="OFFICIAL BCB">OFFICIAL BCB</option>
-            <option value="STAFF BCB">STAFF BCB</option>
-            <option value="ACU">ACU</option>
-            <option value="ORGANIZINE COMMITTEE">ORGANIZINE COMMITTEE</option>
-            <option value="SUB-COMMITTEE">SUB-COMMITTEE</option>
-            <option value="T & S">T & S</option>
-            <option value="LOGISTICS & PROTOCOL">LOGISTICS & PROTOCOL</option>
-            <option value="VENDOR">VENDOR</option>
-            <option value="SERVICE PROVIDER">SERVICE PROVIDER</option>
-            <option value="ON DUTY">ON DUTY</option>
-            <option value="SPONSOR">SPONSOR</option>
-            <option value="MEDIA CENTER">MEDIA CENTER</option>
-            <option value="SPECIAL ENCLOSURE">SPECIAL ENCLOSURE</option>
-            <option value="MEDIA">MEDIA</option>
-            <option value="ANTI-DOPING">ANTI-DOPING</option>
-            <option value="CLEANER">CLEANER</option>
-          </select>
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name">VENUES: <!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="vanue">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="DHAKA">DHAKA</option>
-            <option value="CHATTOGRAM">CHATTOGRAM</option>
-            <option value="SYLHET">SYLHET</option>
-            <option value="RAJSHAHI">RAJSHAHI</option>
-            <option value="BOGURA">BOGURA</option>
-            <option value="ALL VENUE">ALL VENUE</option>
-            <option value="SKICS">SKICS</option>
-            <option value="SBNCS">SBNCS</option>
-            <option value="ZACS">ZACS</option>
-            <option value="SICS">SICS</option>
-          </select>
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name">ZONE ONE: <!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zoneone">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option selected="selected" value="1">1</option>
-          </select>
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name">ZONE TWO: <!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zonetwo">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="X">X</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name">ZONE THREE: <!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zonethree">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="3">3</option>
-            <option value="X">X</option>
-          </select>
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name">ZONE FOUR:<!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zonefour">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="X">X</option>
-            <option value="4">4</option>
-          </select>
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name">ZONE FIVE: <!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zonefive">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="X">X</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div class="form-right">
-          <label id="icon" for="name">ZONE SIX:<!-- <i class="fas fa-envelope"></i> --></label>
-          <select id="cars" name="zonesix">
-            <option value="SELECT AN ITEM">SELECT AN ITEM</option>
-            <option value="X">X</option>
-            <option value="6">6</option>
-          </select>
-        </div>
-        <div class="form-left">
-          <label id="icon" for="name">FORM NO:</label>
-          <input type="text" name="formno" id="name" placeholder="FORM NO" required />
-        </div>
-        <div class="form-right">
-          <label id="icon" for="cardtype"> CARD TYPE:</label>
-          <input type="text" name="cardfooter" id="cardname" placeholder="CARD TYPE">
-        </div>
-      </div>
-      <div class="circleavatar">
-        <input type="file" id="image" name="image">
-      </div>
-      <hr>
-      <div class="btn-block">
-        <p>By clicking Register</p>
-        <button style="cursor: pointer;" type="submit" value="Submit">Submit</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
   <script>
     const form = document.querySelector("#acro");
@@ -294,5 +296,6 @@
 
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </body>
 </html>

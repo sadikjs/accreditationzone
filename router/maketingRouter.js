@@ -31,7 +31,7 @@ router.get("/edit/:id", decorateHtmlResponse("marketing-edit"), checkLogin, getM
 
 //route
 router.get("/data", decorateHtmlResponse("Marketing-Data"), checkLogin, getMarketingData);
-router.delete("/:id", removeAllMarketingUser);
+router.delete("/delete/:id", removeAllMarketingUser);
 
 router.post("/update/:id", decorateHtmlResponse("update"),checkLogin, getUpadateMarketing);
 

@@ -7,10 +7,10 @@ signature_input.addEventListener("change", function(){
     const reader = new FileReader();
     reader.addEventListener("load", ()=>{
         upload_image_sig = reader.result;
-        const sigfour = document.querySelector("tr#display_image:nth-last-child(4) > td.item17").style;
-        const sigthree = document.querySelector("tr#display_image:nth-last-child(3) > td.item17").style;
-        const sigtwo = document.querySelector("tr#display_image:nth-last-child(2) > td.item17").style;
-        const sigone = document.querySelector("tr#display_image:nth-last-child(1) > td.item17").style;
+        const sigfour = document.querySelector("div#display_image:nth-last-child(4) > div#signat").style;
+        const sigthree = document.querySelector("div#display_image:nth-last-child(3) > div#signat").style;
+        const sigtwo = document.querySelector("div#display_image:nth-last-child(2) > div#signat").style;
+        const sigone = document.querySelector("div#display_image:nth-last-child(1) > div#signat").style;
         sigfour.backgroundImage=`url(${upload_image_sig})`;
         sigthree.backgroundImage=`url(${upload_image_sig})`;
         sigtwo.backgroundImage=`url(${upload_image_sig})`;
