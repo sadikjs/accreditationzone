@@ -76,7 +76,6 @@ table>tbody>tr.grid-container:nth-last-child(4) {
 .item5 {
     grid-area: venue;
     position: relative;
-    ;
     height: 190px;
 }
 

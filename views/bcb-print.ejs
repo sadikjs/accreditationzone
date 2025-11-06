@@ -119,26 +119,26 @@
     </div>
         <div id="main">
             <div id="table" class="flex w-[1082px] h-[1570px] justify-center items-center">
-                <div class="w-[1082px] h-[1570px] grid grid-cols-2">
+                <div class="w-[1082px] h-[1570px] grid grid-cols-2 !bg-white">
                 <% users.forEach(function(user) { %>
                     <div id="display_image"
                     class="w-[534px] h-[780px] grid grid-cols-6 justify-center justify-items-center bg-center bg-cover border border-slate-400"
                     >
                             <div class="row-start-1 col-span-6 col-start-1 col-end-7 w-[500px] h-52 grid items-center justify-center"></div>
-                            <div class="w-[180px] h-[180px] row-start-2 col-span-2 col-start-3 col-end-5 flex items-center justify-center">
+                            <div class="w-[180px] h-[180px] row-start-2 col-span-2 col-start-3 col-end-5 flex items-center justify-center z-10">
                                 <% if(user.image) { %>
-                                <img class="w-[180px] h-[180px]" src="/uploads/bcbAvatars/<%= user.image %>" />
+                                <img class="w-[180px] h-[180px] z-10" src="/uploads/bcbAvatars/<%= user.image %>" />
                                 <% } else { %>
                                     <img src="/images/nophoto.png" width="40%" />
                                 <% } %>
                             </div>
-                            <div class="h-[190px]row-start-2 col-span-2 col-end-7">
-                                <p class="!text-white !font-bold !text-[31px] !m-0 !font-sans -rotate-90 !pb-16 !pr-16">
+                            <div class="h-[190px]row-start-2 col-span-2 col-end-7 z-10">
+                                <p class="w-[265px] !text-white !font-bold !text-[31px] !m-0 !font-sans -rotate-90 !pb-12 !pr-12">
                                     <%= user.vanue %>
                                 </p>
                             </div>
                             <div id="signat"
-                            class="w-25 h-[40px] !z-10 row-start-3 col-span-2 col-start-3 col-end-5 !bg-center !bg-cover flex justify-center items-center">
+                            class="w-25 h-[40px] z-20 row-start-3 col-span-2 col-start-3 col-end-5 !bg-center flex justify-center items-center">
                         </div>
                         <div
                         class="w-[495px] h-[57px] row-start-4 col-span-6 col-start-1 col-end-7 flex items-center justify-center">
@@ -160,7 +160,7 @@
             </div> 
             <div class="w-[500px] row-start-7 col-span-6 flex items-center justify-center gap-x-2">
                 <% if(user.zoneone === "X") { %>
-                    <p></p>
+                    <%= null %>
                     <% } else { %>
                     <div class="w-[80px] h-[80px] row-start-7 col-start-1 col-end-2">
                         <p
@@ -170,7 +170,7 @@
                     </div>
                     <% } %>
                         <% if(user.zonetwo==="X") { %>
-                            <p></p>
+                            <%= null %>
                             <% } else { %>
                             <div class="w-[80px] h-[80px] row-start-7 col-start-2 col-end-3">
                                 <p
@@ -180,7 +180,7 @@
                             </div>
                             <% } %>
                                 <% if(user.zonethree==="X" ) { %>
-                                    <p></p>
+                                    <%= null %>
                                     <% } else { %>
                                     <div class="w-[80px] h-[80px] row-start-7 col-start-3 col-end-4">
                                         <p class="w-[80px] h-[80px] !font-sans bg-white border-white rounded-full !text-red-600 !m-auto !font-bold !text-4xl !text-center !pt-5">
@@ -189,7 +189,7 @@
                                     </div>
                                     <% } %>
                                     <% if(user.zonefour === "X") { %>
-                                        <p></p>
+                                        <%= null %>
                                         <% } else { %>
                                             <div class="w-[80px] h-[80px] row-start-7 col-start-4 col-end-5">
                                                 <p
@@ -199,7 +199,7 @@
                                             </div>
                                             <% } %>
                                             <% if(user.zonefive === "X") { %>
-                                                <p></p>
+                                                <%= null %>
                                                 <% } else { %>
                                             <div
                                             class="w-[80px] h-[80px] row-start-7 col-start-5 col-end-6">
@@ -209,7 +209,7 @@
                                                 </div>
                                                 <% } %>
                                                         <% if(user.zonesix==="X" ) { %>
-                                                            <p></p>
+                                                            <%= null %>
                                                             <% } else { %>
                                                                 <div
                                                                 class="w-[80px] h-[80px] row-start-7 col-start-6 col-end-7">
